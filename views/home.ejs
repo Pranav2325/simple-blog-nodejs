@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog web</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>HOME PAGE</h1>
+    <a href="/compose">New Post</a>
+    
+    <% if(posts.length > 0){ %> 
+      <% posts.forEach(function(post) { %> 
+        <a href="/post/<%= post.id %>"><h1><%= post.title %></h1></a>
+        <h2><%= post.content.slice(0, 100) %>...</h2>
+        <hr>
+      <% }); %> 
+    <% } else { %> 
+        <h2>No posts created yet. Please click on "New Post"</h2>
+    <% } %> 
+    </div>
+    
+</body>
+</html>
